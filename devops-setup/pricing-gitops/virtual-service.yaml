@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: pricing-vs
+  namespace: pricing
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - pricing-gateway
+  http:
+    - route:
+        - destination:
+            host: pricing-service
+            subset: v1
+          weight: 40
+        - destination:
+            host: pricing-service
+            subset: v2
+          weight: 40
+        - destination:
+            host: pricing-service
+            subset: v3
+          weight: 20

@@ -16,6 +16,7 @@ package com.travelerinsider.pricesmart.domain.entity;
 public record PriceResponse(
         String id,
         String name,
+        String description,
         double price,
         String model,
         String note,
