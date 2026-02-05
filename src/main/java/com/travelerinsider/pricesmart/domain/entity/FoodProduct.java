@@ -13,4 +13,4 @@ package com.travelerinsider.pricesmart.domain.entity;
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-public record FoodProduct(String name, double basePrice) {}
+public record FoodProduct(String name, String description, double basePrice) {}

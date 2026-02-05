@@ -39,7 +39,10 @@ public class PricingController {
 
     @GetMapping("/price")
     public ResponseEntity<PriceResponse> getPrice(@RequestParam String productId) {
-        return ResponseEntity.ok(pricingService.calculatePrice(productId));
+        log.info("Received price request for product ID: {}", productId);
+        PriceResponse response = pricingService.calculatePrice(productId);
+        log.info("Returning price response for product ID: {}: {}", productId, response.price());
+        return ResponseEntity.ok(response);
     }
 
 
